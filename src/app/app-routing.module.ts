@@ -4,6 +4,7 @@ import {LandingPageComponent} from "./layout/landing-page/landing-page.component
 import {RegisterPageComponent} from "./user-profile/register-page/register-page.component";
 import {LoginPageComponent} from "./user-profile/login-page/login-page.component";
 import {ROUTE_PATHS} from "./top-routes/routes";
+import { ProductPageComponent } from './layout/product-page/product-page.component';
 
 const routes: Routes = [
   {
@@ -22,12 +23,19 @@ const routes: Routes = [
     path: 'login',
     component: LoginPageComponent
   }
-]
+  {
+    path: 'category/{id}',
+    component: ProductPageComponent,
+  },
+  {
+    path: 'subcategory/{id}',
+    component: ProductPageComponent,
+  },
+];
 
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

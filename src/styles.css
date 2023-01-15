@@ -6,7 +6,12 @@
 }
 
 body {
+  background: #f7f7f7;
   margin: 0;
+}
+
+.title {
+  margin-bottom: 40px !important;
 }
 
 .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
@@ -24,9 +29,10 @@ body {
 
 .mat-form-field-appearance-outline .mat-form-field-flex {
   padding: 0 .75em 0 .75em;
-  margin-top: 1.75em !important;
-  position: relative;
   height: 45px !important;
+  width: 370px !important;
+  margin-top: -0.25em;
+  position: relative;
 }
 
 .mat-form-field-outline-end {
@@ -45,4 +51,18 @@ body {
 .mat-form-field-label {
   top: 26px !important;
   margin-left: 22px;
+}
+
+button {
+  background: #0082e6 !important;
+  border: 1px solid #99A0BA;
+  border-radius: 20px !important;
+  align-items: center;
+  padding: 8px;
+  width: 260px;
+
+}
+
+button:disabled {
+  border: none !important;
 }

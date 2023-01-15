@@ -1,3 +1,5 @@
 export const ROUTE_PATHS = {
-home: 'home'
+  home: 'home',
+  register: 'register',
+  login: 'login'
 }

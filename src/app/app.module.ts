@@ -6,6 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {LayoutModule} from "./layout/layout.module";
 import {RouterModule, RouterOutlet} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
+import {UserProfileModule} from "./user-profile/user-profile.module";
 
 @NgModule({
   declarations: [
@@ -16,9 +17,10 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserAnimationsModule,
     AppRoutingModule,
     LayoutModule,
+    UserProfileModule,
     RouterOutlet,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

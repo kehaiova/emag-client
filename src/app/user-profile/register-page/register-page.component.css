@@ -1,0 +1,42 @@
+mat-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 410px;
+  height: 500px;
+  background: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 1px 2px 5px #ccc;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+button {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 11px;
+  color: #fff;
+  position: relative;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 21px;
+}

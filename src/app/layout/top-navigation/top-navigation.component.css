@@ -1,0 +1,54 @@
+mat-toolbar-row:first-child {
+  background: whitesmoke;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+mat-toolbar-row:last-child {
+  background: rgb(53, 48, 139);
+  background: linear-gradient(90deg, rgba(53, 48, 139, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.list-menu{
+  color: black !important;
+}
+
+.mat-toolbar-row {
+  min-height: 50px !important;
+  height: 50px !important;
+}
+
+mat-icon {
+  color: white !important;
+}
+
+img {
+  width: 140px;
+}
+
+button {
+  display: flex;
+  color: white !important;
+  flex-direction: row-reverse;
+  background: transparent !important;
+  border: none;
+}
+
+p {
+  margin-left: 10px;
+  padding-top: 2px;
+}
+
+.search-field {
+  width: 650px;
+}
+
+.profile-button {
+  color: black !important;
+}
+
+.person-icon {
+  color: dodgerblue !important;
+}

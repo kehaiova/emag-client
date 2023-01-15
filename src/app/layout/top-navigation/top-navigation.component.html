@@ -1,0 +1,29 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <img src="assets/logo.png" alt="logo">
+    <mat-form-field appearance="outline" class="search-field">
+      <input matInput>
+    </mat-form-field>
+    <button class="profile-button">
+      My account
+      <mat-icon class="person-icon">person</mat-icon>
+    </button>
+    <button class="profile-button">
+      Favourites
+      <mat-icon class="person-icon">favorite</mat-icon>
+    </button>
+    <button class="profile-button">
+      Cart
+      <mat-icon class="person-icon">shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-button [matMenuTriggerFor]="menu" >
+      <p>Categories</p>
+      <mat-icon>menu</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="list-menu" *ngFor="let category of categories | async">{{category.name}}</button>
+      </mat-menu>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

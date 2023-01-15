@@ -22,13 +22,13 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent
-  }
+  },
   {
     path: 'category/{id}',
     component: ProductPageComponent,
   },
   {
-    path: 'subcategory/{id}',
+    path: 'subcategory/:id',
     component: ProductPageComponent,
   },
 ];

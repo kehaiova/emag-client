@@ -7,6 +7,7 @@ import { LayoutModule } from './layout/layout.module';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UserProfileModule } from './user-profile/user-profile.module';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { UserProfileModule } from './user-profile/user-profile.module';
     RouterOutlet,
     RouterModule,
     HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

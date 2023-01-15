@@ -10,6 +10,18 @@ body {
   margin: 0;
 }
 
+.snackbar-error {
+  background: #b00020;
+  color: white;
+}
+
+.mat-snack-bar-container {
+  text-align: center;
+}
+
+.mat-simple-snackbar {
+  display: inline-block !important;
+}
 .title {
   margin-bottom: 40px !important;
 }

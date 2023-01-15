@@ -25,6 +25,7 @@ export class CategoryService {
   }
 
   _getSubcategories(categoryId: string): Observable<SubCategory[]> {
+    console.log(categoryId)
     return this.http.get<SubCategory[]>(
       environment.baseUrl + '/subcategories/' + categoryId
     );

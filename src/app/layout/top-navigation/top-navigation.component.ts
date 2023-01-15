@@ -22,4 +22,5 @@ export class TopNavigationComponent implements OnInit {
   openSubCategories(id: string) {
     this.subcategories = this.categoryService._getSubcategories(id);
   }
+
 }

@@ -1,6 +1,6 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <img src="assets/logo.png" alt="logo" />
+    <img src="assets/logo.png" alt="logo"/>
     <button class="profile-button" routerLink="/login">
       My account
       <mat-icon class="person-icon">person</mat-icon>
@@ -25,8 +25,7 @@
           *ngFor="let category of categories | async"
           mat-button
           [matMenuTriggerFor]="submenu"
-          (onClick)="openSubCategories(category.id)"
-        >
+          (onMenuOpen)="openSubCategories(category.id)">
           {{ category.name }}
         </button>
         <mat-menu #submenu="matMenu">
@@ -35,8 +34,7 @@
             class="list-menu"
             *ngFor="let subcategory of subcategories | async"
             mat-button
-            [matMenuTriggerFor]="submenu"
-            routerLink="subcategory/{subcategory.id}"
+            [routerLink]="['/subcategory', subcategory.id]"
           >
             {{ subcategory.name }}
           </button>

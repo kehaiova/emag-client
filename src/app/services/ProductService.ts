@@ -15,4 +15,10 @@ export class ProductService {
       environment.baseUrl + '/subcategories/' + subCategoryId + '/products'
     );
   }
+
+  _favourite(productId: number): Observable<Product[]> {
+    return this.http.get<Product[]>(
+      environment.baseUrl + '/products/' + productId + '/fav'
+    );
+  }
 }

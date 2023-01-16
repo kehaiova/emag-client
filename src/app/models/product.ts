@@ -15,5 +15,5 @@ export interface Product {
   addedAt: Date;
   deletedAt: Date;
   productRating: number;
-  productImages: ProductImage[];
+  productImages?: ProductImage[];
 }

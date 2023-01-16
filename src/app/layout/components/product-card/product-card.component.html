@@ -1,0 +1,29 @@
+<mat-card class="product-card">
+  <img
+    mat-card-image
+    src="https://picsum.photos/200/300?random={{ product.id }}"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-title class="product-card-title"
+    >{{ product.name }}
+    <hr />
+    {{ product.model }} - {{ product.brand }}</mat-card-title
+  >
+  <mat-card-content>
+    <div class="product-card-description">
+      {{ product.description }}
+    </div>
+    <div class="product-card-specials">
+      <span class="product-card-rating"
+        >Rating: {{ product.productRating }}</span
+      >
+      <span class="product-card-price">
+        Price: {{ product.price | currency }}
+      </span>
+      <button mat-raised-button color="primary">Add to cart</button>
+      <button mat-raised-button color="primary" (click)="fav(product.id)">
+        Add to fav
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

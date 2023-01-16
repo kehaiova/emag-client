@@ -1,9 +1,9 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from "@angular/router";
-import {LandingPageComponent} from "./layout/landing-page/landing-page.component";
-import {RegisterPageComponent} from "./user-profile/register-page/register-page.component";
-import {LoginPageComponent} from "./user-profile/login-page/login-page.component";
-import {ROUTE_PATHS} from "./top-routes/routes";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LandingPageComponent } from './layout/landing-page/landing-page.component';
+import { RegisterPageComponent } from './user-profile/register-page/register-page.component';
+import { LoginPageComponent } from './user-profile/login-page/login-page.component';
+import { ROUTE_PATHS } from './top-routes/routes';
 import { ProductPageComponent } from './layout/product-page/product-page.component';
 import {ForgottenPasswordComponent} from "./user-profile/forgotten-password/forgotten-password.component";
 import {MyAccountComponent} from "./user-profile/my-account/my-account.component";
@@ -11,22 +11,22 @@ import {MyAccountComponent} from "./user-profile/my-account/my-account.component
 const routes: Routes = [
   {
     path: '',
-    component: LandingPageComponent
+    component: LandingPageComponent,
   },
   {
     path: ROUTE_PATHS.home,
-    component: LandingPageComponent
+    component: LandingPageComponent,
   },
   {
     path: 'register',
-    component: RegisterPageComponent
+    component: RegisterPageComponent,
   },
   {
     path: 'login',
-    component: LoginPageComponent
+    component: LoginPageComponent,
   },
   {
-    path: 'category/{id}',
+    path: 'category/:id',
     component: ProductPageComponent,
   },
   {

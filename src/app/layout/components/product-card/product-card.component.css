@@ -1,0 +1,27 @@
+.product-card-title {
+  font-size: 3em !important;
+  text-align: center;
+}
+.product-card-description {
+  margin-bottom: 10px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.product-card-specials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.product-card-specials > * {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.product-card-price {
+  color: darkcyan;
+}
+
+.product-card-price,
+.product-card-rating {
+  margin-bottom: 25px;
+}

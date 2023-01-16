@@ -1,1 +1,9 @@
-{{ products | async | json }}
+<app-top-navigation></app-top-navigation>
+<div class="product-container">
+  <app-product-card
+    class="product-card"
+    *ngFor="let product of products | async"
+    [product]="product"
+  >
+  </app-product-card>
+</div>

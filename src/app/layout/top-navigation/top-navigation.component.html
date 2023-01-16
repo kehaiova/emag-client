@@ -1,9 +1,18 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <img src="assets/logo.png" alt="logo"/>
-    <button class="profile-button" routerLink="/login">
+    <button
+      [matMenuTriggerFor]="profileMenu"
+      class="profile-button">
       My account
       <mat-icon class="person-icon">person</mat-icon>
+      <mat-menu #profileMenu="matMenu" class="profileMenu" xPosition="before">
+        <p *ngIf="isLogged" class="username">You're logged as {{loggedUser.fullName}}</p>
+        <button mat-menu-item class="list-menu" *ngIf="isLogged" routerLink="/my-account">My Account</button>
+        <button mat-menu-item class="list-menu" routerLink="/login" *ngIf="!isLogged">Login</button>
+        <button mat-menu-item class="list-menu" routerLink="/register" *ngIf="!isLogged">Sign Up</button>
+        <button mat-menu-item class="list-menu" *ngIf="isLogged" (click)="signOut()">Sign Out</button>
+      </mat-menu>
     </button>
     <button class="profile-button">
       Favourites
@@ -15,15 +24,14 @@
     </button>
   </mat-toolbar-row>
   <mat-toolbar-row>
-    <button mat-button [matMenuTriggerFor]="menu">
-      <p>Categories</p>
+    <button [matMenuTriggerFor]="menu">
+      Categories
       <mat-icon>menu</mat-icon>
       <mat-menu #menu="matMenu">
         <button
           mat-menu-item
           class="list-menu"
           *ngFor="let category of categories | async"
-          mat-button
           [matMenuTriggerFor]="submenu"
           (onMenuOpen)="openSubCategories(category.id)">
           {{ category.name }}
@@ -33,9 +41,7 @@
             mat-menu-item
             class="list-menu"
             *ngFor="let subcategory of subcategories | async"
-            mat-button
-            [routerLink]="['/subcategory', subcategory.id]"
-          >
+            [routerLink]="['/subcategory', subcategory.id]">
             {{ subcategory.name }}
           </button>
         </mat-menu>

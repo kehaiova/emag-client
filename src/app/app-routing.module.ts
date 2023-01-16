@@ -5,6 +5,8 @@ import {RegisterPageComponent} from "./user-profile/register-page/register-page.
 import {LoginPageComponent} from "./user-profile/login-page/login-page.component";
 import {ROUTE_PATHS} from "./top-routes/routes";
 import { ProductPageComponent } from './layout/product-page/product-page.component';
+import {ForgottenPasswordComponent} from "./user-profile/forgotten-password/forgotten-password.component";
+import {MyAccountComponent} from "./user-profile/my-account/my-account.component";
 
 const routes: Routes = [
   {
@@ -31,6 +33,14 @@ const routes: Routes = [
     path: 'subcategory/:id',
     component: ProductPageComponent,
   },
+  {
+    path: 'forgotten-password',
+    component: ForgottenPasswordComponent
+  },
+  {
+    path: 'my-account',
+    component: MyAccountComponent
+  }
 ];
 
 @NgModule({

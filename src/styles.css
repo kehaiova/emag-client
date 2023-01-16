@@ -6,7 +6,6 @@
 }
 
 body {
-  background: #f7f7f7;
   margin: 0;
 }
 
@@ -71,10 +70,15 @@ button {
   border-radius: 20px !important;
   align-items: center;
   padding: 8px;
-  width: 260px;
-
 }
 
 button:disabled {
   border: none !important;
+}
+
+.mat-card {
+  background: linear-gradient(119.23deg, rgba(255, 255, 255, 0.7) 16.98%, rgba(255, 255, 255, 0.1) 92.15%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2) !important;
+  border-radius: 20px;
 }

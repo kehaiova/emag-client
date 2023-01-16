@@ -1,0 +1,27 @@
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background: #f7f7f7;
+}
+
+mat-card {
+  border-radius: 20px;
+  margin:30px;
+}
+
+.user-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.change-password {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+mat-card-subtitle {
+  text-align: center;
+}

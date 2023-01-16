@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {RouterLink} from '@angular/router';
 import {ProductPageComponent} from './product-page/product-page.component';
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -16,15 +17,16 @@ import {ProductPageComponent} from './product-page/product-page.component';
     LandingPageComponent,
     ProductPageComponent,
   ],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatMenuModule,
-    RouterLink,
-  ],
+    imports: [
+        CommonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatMenuModule,
+        RouterLink,
+        MatButtonModule,
+    ],
   exports: [TopNavigationComponent],
 })
 export class LayoutModule {

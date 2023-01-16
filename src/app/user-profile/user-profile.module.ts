@@ -8,22 +8,30 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
 import {MatSelectModule} from "@angular/material/select";
+import { ForgottenPasswordComponent } from './forgotten-password/forgotten-password.component';
+import { MyAccountComponent } from './my-account/my-account.component';
+import {LayoutModule} from "../layout/layout.module";
+import { MyAccountCardComponent } from './my-account/my-account-card.component';
 
 @NgModule({
   declarations: [
     RegisterPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    ForgottenPasswordComponent,
+    MyAccountComponent,
+    MyAccountCardComponent
   ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    RouterLink,
-    MatSelectModule,
-  ]
+    imports: [
+        CommonModule,
+        MatCardModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        RouterLink,
+        MatSelectModule,
+        LayoutModule,
+    ]
 })
 export class UserProfileModule {
 }

@@ -5,9 +5,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from './layout/layout.module';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { UserProfileModule } from './user-profile/user-profile.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {CustomInterceptor} from "./config/CustomInterceptor";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HttpClientModule,
     MatSnackBarModule,
   ],
-  providers: [],
+  providers: [    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: CustomInterceptor ,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

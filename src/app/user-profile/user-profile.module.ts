@@ -8,10 +8,12 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
 import {MatSelectModule} from "@angular/material/select";
-import { ForgottenPasswordComponent } from './forgotten-password/forgotten-password.component';
-import { MyAccountComponent } from './my-account/my-account.component';
+import {ForgottenPasswordComponent} from './forgotten-password/forgotten-password.component';
+import {MyAccountComponent} from './my-account/my-account.component';
 import {LayoutModule} from "../layout/layout.module";
-import { MyAccountCardComponent } from './my-account/my-account-card.component';
+import {MyAccountCardComponent} from './my-account/my-account-card.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -21,17 +23,19 @@ import { MyAccountCardComponent } from './my-account/my-account-card.component';
     MyAccountComponent,
     MyAccountCardComponent
   ],
-    imports: [
-        CommonModule,
-        MatCardModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        RouterLink,
-        MatSelectModule,
-        LayoutModule,
-    ]
+  imports: [
+    CommonModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    RouterLink,
+    MatSelectModule,
+    LayoutModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ]
 })
 export class UserProfileModule {
 }

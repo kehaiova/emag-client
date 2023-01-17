@@ -6,6 +6,9 @@ import {Router} from "@angular/router";
 import {SnackbarService} from "./SnackbarService";
 import {ForgottenPassword} from "../models/ForgottenPassword";
 import {Login} from "../models/login";
+import {changePassword} from "../models/changepassword";
+import {LoggedUser} from "../models/logged_user";
+import {UserData} from "../models/user-data";
 
 @Injectable({
   providedIn: "root"
@@ -14,7 +17,6 @@ export class UserService {
 
   constructor(private snackbarService: SnackbarService, private router: Router, private http: HttpClient) {
   }
-
 
   loggedUser: any;
   isLogged: boolean = false;
@@ -56,8 +58,19 @@ export class UserService {
   _logout() {
     return this.http.post(environment.baseUrl + "/users/logout", {})
       .subscribe(result => {
+        this.router.navigate(['/home']).then(r => {})
         this.loggedUser = {};
       })
+  }
+
+  _changeUserPassword(password: changePassword) {
+    return this.http.put(environment.baseUrl + "/users/" + this.loggedUser.id + "/pass", password)
+      .subscribe();
+  }
+
+  _editUserData(userData: UserData) {
+    return this.http.put(environment.baseUrl + "/users/" + this.loggedUser.id, userData)
+      .subscribe();
   }
 
 }

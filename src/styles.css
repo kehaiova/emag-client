@@ -40,7 +40,6 @@ body {
 
 .mat-form-field-appearance-outline .mat-form-field-flex {
   padding: 0 .75em 0 .75em;
-  height: 45px !important;
   width: 370px !important;
   margin-top: -0.25em;
   position: relative;
@@ -70,6 +69,15 @@ button {
   border-radius: 20px !important;
   align-items: center;
   padding: 8px;
+}
+
+.mat-icon-button {
+  background: transparent !important;
+}
+
+.mat-calendar-period-button {
+  min-width: 0;
+  background: transparent !important;
 }
 
 button:disabled {

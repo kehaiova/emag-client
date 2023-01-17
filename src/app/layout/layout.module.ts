@@ -12,6 +12,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatMenuModule,
     RouterLink,
+    MatSidenavModule,
   ],
-  exports: [TopNavigationComponent],
+    exports: [TopNavigationComponent],
 })
 export class LayoutModule {}

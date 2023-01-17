@@ -30,7 +30,9 @@ export class TopNavigationComponent implements OnInit {
   }
 
   signOut() {
-    this.userService._logout()
+    this.userService._logout();
+    this.isLogged = false;
+    this.loggedUser = {} as LoggedUser;
   }
 
 }

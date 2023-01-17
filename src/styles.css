@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -11,6 +11,11 @@ body {
 
 .snackbar-error {
   background: #b00020;
+  color: white;
+}
+
+.snackbar-success {
+  background: #088030;
   color: white;
 }
 
@@ -39,7 +44,7 @@ body {
 }
 
 .mat-form-field-appearance-outline .mat-form-field-flex {
-  padding: 0 .75em 0 .75em;
+  padding: 0 0.75em 0 0.75em;
   width: 370px !important;
   margin-top: -0.25em;
   position: relative;
@@ -50,7 +55,7 @@ body {
 }
 
 .mat-form-field-flex > .mat-form-field-infix {
-  padding: .9em !important;
+  padding: 0.9em !important;
 }
 
 .mat-focused .mat-form-field-label {
@@ -65,7 +70,7 @@ body {
 
 button {
   background: #0082e6 !important;
-  border: 1px solid #99A0BA;
+  border: 1px solid #99a0ba;
   border-radius: 20px !important;
   align-items: center;
   padding: 8px;
@@ -85,7 +90,11 @@ button:disabled {
 }
 
 .mat-card {
-  background: linear-gradient(119.23deg, rgba(255, 255, 255, 0.7) 16.98%, rgba(255, 255, 255, 0.1) 92.15%);
+  background: linear-gradient(
+    119.23deg,
+    rgba(255, 255, 255, 0.7) 16.98%,
+    rgba(255, 255, 255, 0.1) 92.15%
+  );
   border: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2) !important;
   border-radius: 20px;

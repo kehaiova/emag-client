@@ -10,9 +10,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink } from '@angular/router';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductOrderComponent } from './components/product-order/product-order.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import {MatSidenavModule} from "@angular/material/sidenav";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { FavouritePageComponent } from './favourite-page/favourite-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { EditProductPageComponent } from './edit-product-page/edit-product-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     LandingPageComponent,
     ProductPageComponent,
     ProductCardComponent,
+    FavouritePageComponent,
+    CartPageComponent,
+    ProductOrderComponent,
+    EditProductPageComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +49,6 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     RouterLink,
     MatSidenavModule,
   ],
-    exports: [TopNavigationComponent],
+  exports: [TopNavigationComponent],
 })
 export class LayoutModule {}

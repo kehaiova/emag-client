@@ -17,6 +17,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FavouritePageComponent } from './favourite-page/favourite-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { EditProductPageComponent } from './edit-product-page/edit-product-page.component';
+import { EditProductPageCardComponent } from './edit-product-page/edit-product-page-card.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatSelectModule} from "@angular/material/select";
+import { AddProductPageComponent } from './add-product-page/add-product-page.component';
+import { AddProductCardComponent } from './add-product-page/add-product-card.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,6 +34,9 @@ import { EditProductPageComponent } from './edit-product-page/edit-product-page.
     CartPageComponent,
     ProductOrderComponent,
     EditProductPageComponent,
+    EditProductPageCardComponent,
+    AddProductPageComponent,
+    AddProductCardComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +57,10 @@ import { EditProductPageComponent } from './edit-product-page/edit-product-page.
     MatMenuModule,
     RouterLink,
     MatSidenavModule,
+    MatTabsModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [TopNavigationComponent],
 })

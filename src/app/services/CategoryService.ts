@@ -30,4 +30,8 @@ export class CategoryService {
       environment.baseUrl + '/subcategories/' + categoryId
     );
   }
+
+  _getAllSubcategories(): Observable<SubCategory[]> {
+    return this.http.get<SubCategory[]>(environment.baseUrl + "/subcategories/findAll")
+  }
 }

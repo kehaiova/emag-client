@@ -11,9 +11,8 @@ import { CartService } from 'src/app/services/CartService';
 })
 export class CartPageComponent implements OnInit {
   sub: SubCategory = {
-    id: '1',
-    categoryId: '1',
-    name: 'test',
+    id: 1,
+    subcategoryName: 'test',
   };
 
   tempProducts: Product[] = [

@@ -14,9 +14,8 @@ import { of } from 'rxjs';
 })
 export class ProductPageComponent implements OnInit {
   sub: SubCategory = {
-    id: '1',
-    categoryId: '1',
-    name: 'test',
+    id: 1,
+    subcategoryName: 'test',
   };
 
   tempProducts: Product[] = [

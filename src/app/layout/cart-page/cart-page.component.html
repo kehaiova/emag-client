@@ -1,9 +1,9 @@
 <app-top-navigation></app-top-navigation>
-<h1>Products</h1>
+<h1>Cart</h1>
 <div class="product-container">
-  <app-product-card
+  <app-product-order
     *ngFor="let product of products | async"
     [product]="product"
   >
-  </app-product-card>
+  </app-product-order>
 </div>

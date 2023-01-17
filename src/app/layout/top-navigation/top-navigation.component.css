@@ -8,10 +8,14 @@ mat-toolbar-row:first-child {
 
 mat-toolbar-row:last-child {
   background: rgb(53, 48, 139);
-  background: linear-gradient(90deg, rgba(53, 48, 139, 1) 0%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(53, 48, 139, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
-.list-menu{
+.list-menu {
   color: black !important;
 }
 
@@ -49,6 +53,7 @@ p {
 
 .profile-button {
   color: black !important;
+  cursor: pointer;
 }
 
 .person-icon {

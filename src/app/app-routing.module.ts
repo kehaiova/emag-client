@@ -5,8 +5,11 @@ import { RegisterPageComponent } from './user-profile/register-page/register-pag
 import { LoginPageComponent } from './user-profile/login-page/login-page.component';
 import { ROUTE_PATHS } from './top-routes/routes';
 import { ProductPageComponent } from './layout/product-page/product-page.component';
-import {ForgottenPasswordComponent} from "./user-profile/forgotten-password/forgotten-password.component";
-import {MyAccountComponent} from "./user-profile/my-account/my-account.component";
+import { ForgottenPasswordComponent } from './user-profile/forgotten-password/forgotten-password.component';
+import { MyAccountComponent } from './user-profile/my-account/my-account.component';
+import { FavouritePageComponent } from './layout/favourite-page/favourite-page.component';
+import { CartPageComponent } from './layout/cart-page/cart-page.component';
+import { EditProductPageComponent } from './layout/edit-product-page/edit-product-page.component';
 
 const routes: Routes = [
   {
@@ -35,12 +38,24 @@ const routes: Routes = [
   },
   {
     path: 'forgotten-password',
-    component: ForgottenPasswordComponent
+    component: ForgottenPasswordComponent,
   },
   {
     path: 'my-account',
-    component: MyAccountComponent
-  }
+    component: MyAccountComponent,
+  },
+  {
+    path: 'favourites',
+    component: FavouritePageComponent,
+  },
+  {
+    path: 'cart',
+    component: CartPageComponent,
+  },
+  {
+    path: 'product/edit/:id',
+    component: EditProductPageComponent,
+  },
 ];
 
 @NgModule({

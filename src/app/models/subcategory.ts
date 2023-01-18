@@ -1,5 +1,6 @@
 import { Category } from './category';
 
-export interface SubCategory extends Category {
-  categoryId: string;
+export interface SubCategory {
+  id: number;
+  subcategoryName: string,
 }

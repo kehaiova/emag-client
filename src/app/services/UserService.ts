@@ -23,8 +23,11 @@ export class UserService {
   loggedUser: any;
   isLogged: boolean = false;
 
+
   _isAdmin(): boolean {
-    return this.loggedUser.isAdmin;
+    console.log(this.isLogged, 'isLogged')
+    console.log(this.loggedUser, 'Logged user')
+    return this.loggedUser?.admin && this.isLogged;
   }
 
   _register(userDetails: User) {

@@ -11,9 +11,8 @@ import { ProductService } from 'src/app/services/ProductService';
 })
 export class FavouritePageComponent implements OnInit {
   sub: SubCategory = {
-    id: '1',
-    categoryId: '1',
-    name: 'test',
+    id: 1,
+    subcategoryName: 'test',
   };
 
   tempProducts: Product[] = [

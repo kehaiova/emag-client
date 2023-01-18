@@ -19,6 +19,12 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { EditProductPageComponent } from './edit-product-page/edit-product-page.component';
 import { ProductComponent } from './components/product/product.component';
 import { SingleProductPageComponent } from './single-product-page/single-product-page.component';
+import { EditProductPageCardComponent } from './edit-product-page/edit-product-page-card.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
+import { AddProductPageComponent } from './add-product-page/add-product-page.component';
+import { AddProductCardComponent } from './add-product-page/add-product-card.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,9 @@ import { SingleProductPageComponent } from './single-product-page/single-product
     EditProductPageComponent,
     ProductComponent,
     SingleProductPageComponent,
+    EditProductPageCardComponent,
+    AddProductPageComponent,
+    AddProductCardComponent,
   ],
   imports: [
     CommonModule,
@@ -52,6 +61,10 @@ import { SingleProductPageComponent } from './single-product-page/single-product
     MatMenuModule,
     RouterLink,
     MatSidenavModule,
+    MatTabsModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [TopNavigationComponent],
 })

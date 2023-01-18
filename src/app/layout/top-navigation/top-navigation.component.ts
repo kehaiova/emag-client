@@ -12,7 +12,7 @@ import {LoggedUser} from "../../models/logged_user";
   styleUrls: ['./top-navigation.component.css'],
 })
 export class TopNavigationComponent implements OnInit {
-  constructor(private userService: UserService, private categoryService: CategoryService) {}
+  constructor(public userService: UserService, private categoryService: CategoryService) {}
 
   categories!: Observable<Category[]>;
   subcategories!: Observable<SubCategory[]>;

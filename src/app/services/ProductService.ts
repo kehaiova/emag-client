@@ -20,6 +20,12 @@ export class ProductService {
     );
   }
 
+  _getProductById(productId: number): Observable<Product> {
+    return this.http.get<Product>(
+      environment.baseUrl + '/products/' + productId
+    );
+  }
+
   _favourite(productId: number): Observable<Product[]> {
     this.snackbarService.openErrorSnackbar(
       'Product added to favourites',
@@ -47,4 +53,9 @@ export class ProductService {
     return this.http.get<Product[]>(environment.baseUrl + '/products/fav');
   }
 
+  _deleteProduct(productId: number) {
+    this.snackbarService.openErrorSnackbar('Product deleted', 'success');
+
+    this.http.delete<Product[]>(environment.baseUrl + '/products/' + productId);
+  }
 }

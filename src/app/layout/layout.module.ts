@@ -17,12 +17,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FavouritePageComponent } from './favourite-page/favourite-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { EditProductPageComponent } from './edit-product-page/edit-product-page.component';
+import { ProductComponent } from './components/product/product.component';
+import { SingleProductPageComponent } from './single-product-page/single-product-page.component';
 import { EditProductPageCardComponent } from './edit-product-page/edit-product-page-card.component';
-import {MatTabsModule} from "@angular/material/tabs";
-import {MatSelectModule} from "@angular/material/select";
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 import { AddProductPageComponent } from './add-product-page/add-product-page.component';
 import { AddProductCardComponent } from './add-product-page/add-product-card.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     CartPageComponent,
     ProductOrderComponent,
     EditProductPageComponent,
+    ProductComponent,
+    SingleProductPageComponent,
     EditProductPageCardComponent,
     AddProductPageComponent,
     AddProductCardComponent,

@@ -8,12 +8,26 @@
   <button
     mat-raised-button
     color="primary"
+    class="edit-option"
     [routerLink]="['/product/edit', product.id]"
+    *ngIf="isAdmin"
   >
     <mat-icon class="person-icon">edit</mat-icon>
   </button>
 
-  <mat-card-title class="product-card-title"
+  <button
+    mat-raised-button
+    color="primary"
+    class="delete-option"
+    (click)="delete(product.id)"
+    *ngIf="isAdmin"
+  >
+    <mat-icon class="person-icon">delete</mat-icon>
+  </button>
+
+  <mat-card-title
+    class="product-card-title"
+    [routerLink]="['/product', product.id]"
     >{{ product.name }}
     <hr />
     {{ product.model }} - {{ product.brand }}</mat-card-title

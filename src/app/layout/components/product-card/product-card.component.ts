@@ -29,14 +29,14 @@ export class ProductCardComponent implements OnInit {
 
   fav(productId: number) {
     if (this.isFavPage) {
-      this.productService._unfavourite(productId);
+      this.productService._unfavourite(productId).subscribe();
     } else {
-      this.productService._favourite(productId);
+      this.productService._favourite(productId).subscribe();
     }
   }
 
   addToCart(productId: number) {
-    this.cartService._addToCart(productId);
+    this.cartService._addToCart(productId).subscribe();
   }
 
   delete(productId: number) {

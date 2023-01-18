@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/UserService";
 import {LoggedUser} from "../../models/logged-user-binding-model";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import {PasswordBindingModel} from "../../models/password-binding-model";
 import {UserDataBindingModel} from "../../models/user-data-binding-model";
 
@@ -12,7 +12,9 @@ import {UserDataBindingModel} from "../../models/user-data-binding-model";
 })
 export class MyAccountCardComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+  }
+
   loggedUser: LoggedUser = {} as LoggedUser;
 
   userDetailsFormGroup!: FormGroup;
@@ -24,7 +26,7 @@ export class MyAccountCardComponent implements OnInit {
   }
 
   userDataModel: UserDataBindingModel = {
-    mobilePhone:  '',
+    mobilePhone: '',
     nickname: '',
     gender: '',
     birthDate: '',
@@ -39,7 +41,7 @@ export class MyAccountCardComponent implements OnInit {
   createUserDetailsFormGroup() {
     this.userDetailsFormGroup = new FormGroup<any>({
       email: new FormControl('', []),
-      username:new FormControl('', []),
+      username: new FormControl('', []),
       birthDate: new FormControl('', []),
       gender: new FormControl('', []),
       addresses: new FormControl('', []),

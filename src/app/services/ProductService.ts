@@ -29,7 +29,7 @@ export class ProductService {
 
   _favourite(productId: number): Observable<ProductsBindingModel[]> {
     this.snackbarService.openErrorSnackbar(
-      'ProductsBindingModel added to favourites',
+      'Product added to favourites',
       'success'
     );
 
@@ -41,7 +41,7 @@ export class ProductService {
 
   _unfavourite(productId: number): Observable<ProductsBindingModel[]> {
     this.snackbarService.openErrorSnackbar(
-      'ProductsBindingModel removed from favourites',
+      'Product removed from favourites',
       'success'
     );
 
@@ -59,7 +59,7 @@ export class ProductService {
   }
 
   _deleteProduct(productId: number) {
-    this.snackbarService.openErrorSnackbar('ProductsBindingModel deleted', 'success');
+    this.snackbarService.openErrorSnackbar('Product deleted', 'success');
     this.http.delete<ProductsBindingModel[]>(environment.baseUrl + '/products/' + productId).subscribe();
   }
 

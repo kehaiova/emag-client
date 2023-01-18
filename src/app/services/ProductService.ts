@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Product } from '../models/product';
 import { SnackbarService } from './SnackbarService';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -11,12 +12,19 @@ import { SnackbarService } from './SnackbarService';
 export class ProductService {
   constructor(
     private http: HttpClient,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
+    private router: Router
   ) {}
 
   _getProducts(subCategoryId: string): Observable<Product[]> {
     return this.http.get<Product[]>(
       environment.baseUrl + '/subcategories/' + subCategoryId + '/products'
+    );
+  }
+
+  _getProductById(productId: number): Observable<Product> {
+    return this.http.get<Product>(
+      environment.baseUrl + '/products/' + productId
     );
   }
 
@@ -45,5 +53,11 @@ export class ProductService {
 
   _getAllFavourites(): Observable<Product[]> {
     return this.http.get<Product[]>(environment.baseUrl + '/products/fav');
+  }
+
+  _deleteProduct(productId: number) {
+    this.snackbarService.openErrorSnackbar('Product deleted', 'success');
+
+    this.http.delete<Product[]>(environment.baseUrl + '/products/' + productId);
   }
 }

@@ -5,8 +5,14 @@
 
 .edit-option {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 16px;
+  right: 16px;
+}
+
+.delete-option {
+  position: absolute;
+  top: 16px;
+  left: 16px;
 }
 
 .product-card {
@@ -16,6 +22,7 @@
 .product-card-title {
   font-size: 3em !important;
   text-align: center;
+  cursor: pointer;
 }
 .product-card-description {
   margin-bottom: 10px;

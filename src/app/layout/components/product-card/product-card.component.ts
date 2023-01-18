@@ -38,4 +38,8 @@ export class ProductCardComponent implements OnInit {
   addToCart(productId: number) {
     this.cartService._addToCart(productId);
   }
+
+  delete(productId: number) {
+    this.productService._deleteProduct(productId);
+  }
 }

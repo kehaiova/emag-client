@@ -17,6 +17,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FavouritePageComponent } from './favourite-page/favourite-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { EditProductPageComponent } from './edit-product-page/edit-product-page.component';
+import { ProductComponent } from './components/product/product.component';
+import { SingleProductPageComponent } from './single-product-page/single-product-page.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { EditProductPageComponent } from './edit-product-page/edit-product-page.
     CartPageComponent,
     ProductOrderComponent,
     EditProductPageComponent,
+    ProductComponent,
+    SingleProductPageComponent,
   ],
   imports: [
     CommonModule,

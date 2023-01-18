@@ -9,9 +9,9 @@ import { ForgottenPasswordComponent } from './user-profile/forgotten-password/fo
 import { MyAccountComponent } from './user-profile/my-account/my-account.component';
 import { FavouritePageComponent } from './layout/favourite-page/favourite-page.component';
 import { CartPageComponent } from './layout/cart-page/cart-page.component';
-import { EditProductPageComponent } from './layout/edit-product-page/edit-product-page.component';
 import { SingleProductPageComponent } from './layout/single-product-page/single-product-page.component';
 import { AddProductPageComponent } from './layout/add-product-page/add-product-page.component';
+import {AddProductCardComponent} from "./layout/add-product-page/add-product-card.component";
 
 const routes: Routes = [
   {
@@ -56,16 +56,17 @@ const routes: Routes = [
   },
   {
     path: 'product/edit/:id',
-    component: EditProductPageComponent,
-  },
-  {
-    path: 'product/:id',
-    component: SingleProductPageComponent,
+    component: AddProductPageComponent,
   },
   {
     path: 'product/add',
     component: AddProductPageComponent,
   },
+  {
+    path: 'product/:id',
+    component: SingleProductPageComponent,
+  },
+
 ];
 
 @NgModule({

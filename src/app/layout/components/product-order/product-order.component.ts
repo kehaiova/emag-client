@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product';
+import { ProductsBindingModel } from 'src/app/models/products-binding-model';
 import { CartService } from 'src/app/services/CartService';
 
 @Component({
@@ -8,7 +8,7 @@ import { CartService } from 'src/app/services/CartService';
   styleUrls: ['./product-order.component.css'],
 })
 export class ProductOrderComponent implements OnInit {
-  @Input() product: Product = {} as Product;
+  @Input() product: ProductsBindingModel = {} as ProductsBindingModel;
 
   constructor(private cartService: CartService) {}
 

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EMPTY, Observable, of } from 'rxjs';
-import { Product } from 'src/app/models/product';
-import { SubCategory } from 'src/app/models/subcategory';
+import { ProductsBindingModel } from 'src/app/models/products-binding-model';
+import { SubcategoryBindingModel } from 'src/app/models/subcategory-binding-model';
 import { ProductService } from 'src/app/services/ProductService';
 
 @Component({
@@ -11,12 +11,12 @@ import { ProductService } from 'src/app/services/ProductService';
   styleUrls: ['./single-product-page.component.css'],
 })
 export class SingleProductPageComponent implements OnInit {
-  sub: SubCategory = {
+  sub: SubcategoryBindingModel = {
     id: 1,
     subcategoryName: 'test',
   };
 
-  tempProduct: Product = {
+  tempProduct: ProductsBindingModel = {
     id: 1,
     name: 'test',
     brand: 'test',
@@ -33,7 +33,7 @@ export class SingleProductPageComponent implements OnInit {
     productRating: 10,
   };
 
-  product: Observable<Product> = EMPTY;
+  product: Observable<ProductsBindingModel> = EMPTY;
 
   constructor(
     private route: ActivatedRoute,

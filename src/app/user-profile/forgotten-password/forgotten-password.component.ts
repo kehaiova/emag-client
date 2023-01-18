@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/UserService";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ForgottenPassword} from "../../models/ForgottenPassword";
+import {ForgottenPasswordBindingModel} from "../../models/forgotten-password-binding-model";
 
 @Component({
   selector: 'app-forgotten-password',
@@ -13,7 +13,7 @@ export class ForgottenPasswordComponent implements OnInit {
   constructor(private userService: UserService) {
   }
 
-  forgottenPasswordModel: ForgottenPassword = {
+  forgottenPasswordModel: ForgottenPasswordBindingModel = {
     email: ''
   }
   passwordFormGroup!: FormGroup;
@@ -22,7 +22,7 @@ export class ForgottenPasswordComponent implements OnInit {
     this.createPasswordGroup();
   }
 
-  editPassword(email: ForgottenPassword) {
+  editPassword(email: ForgottenPasswordBindingModel) {
     this.userService._changePassword(email);
   }
 

@@ -1,4 +1,4 @@
-export interface ProductDto {
+export interface ProductBindingModel {
   name: string,
   subCategoryId: string,
   brand: string,

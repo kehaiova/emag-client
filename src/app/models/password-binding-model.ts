@@ -1,4 +1,4 @@
-export interface changePassword {
+export interface PasswordBindingModel {
 
   oldPassword?: string,
   newPassword?: string,

@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user';
+import { UserBindingModel } from '../models/user-binding-model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 import { SnackbarService } from './SnackbarService';
-import { ForgottenPassword } from '../models/ForgottenPassword';
-import { Login } from '../models/login';
-import { changePassword } from '../models/changepassword';
-import { LoggedUser } from '../models/logged_user';
-import { UserData } from '../models/user-data';
+import { ForgottenPasswordBindingModel } from '../models/forgotten-password-binding-model';
+import { LoginBindingModel } from '../models/login-binding-model';
+import { PasswordBindingModel } from '../models/password-binding-model';
+import { LoggedUser } from '../models/logged-user-binding-model';
+import { UserDataBindingModel } from '../models/user-data-binding-model';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +28,7 @@ export class UserService {
     return this.loggedUser?.admin && this.isLogged;
   }
 
-  _register(userDetails: User) {
+  _register(userDetails: UserBindingModel) {
     this.http.post(environment.baseUrl + '/users', userDetails).subscribe(
       (result) => {
         this.router.navigate(['/home']).then((r) => {});
@@ -43,7 +43,7 @@ export class UserService {
     );
   }
 
-  _changePassword(email: ForgottenPassword) {
+  _changePassword(email: ForgottenPasswordBindingModel) {
     return this.http
       .put(environment.baseUrl + '/users/forgotten-pass', email)
       .subscribe(
@@ -58,7 +58,7 @@ export class UserService {
       );
   }
 
-  _login(userDetails: Login) {
+  _login(userDetails: LoginBindingModel) {
     return this.http
       .post(environment.baseUrl + '/users/login', userDetails)
       .subscribe(
@@ -86,7 +86,7 @@ export class UserService {
       });
   }
 
-  _changeUserPassword(password: changePassword) {
+  _changeUserPassword(password: PasswordBindingModel) {
     return this.http
       .put(
         environment.baseUrl + '/users/' + this.loggedUser.id + '/pass',
@@ -95,7 +95,7 @@ export class UserService {
       .subscribe();
   }
 
-  _editUserData(userData: UserData) {
+  _editUserData(userData: UserDataBindingModel) {
     return this.http
       .put(environment.baseUrl + '/users/' + this.loggedUser.id, userData)
       .subscribe();

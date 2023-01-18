@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/UserService";
-import {User} from "../../models/user";
+import {UserBindingModel} from "../../models/user-binding-model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -15,7 +15,7 @@ export class RegisterPageComponent implements OnInit {
 
   registerForm!: FormGroup;
 
-  userModel: User = {
+  userModel: UserBindingModel = {
     email: '',
     fullName: '',
     password: '',
@@ -26,7 +26,7 @@ export class RegisterPageComponent implements OnInit {
     this.createRegisterForm();
   }
 
-  register(userDetails: User) {
+  register(userDetails: UserBindingModel) {
     this.userService._register(userDetails);
   }
 

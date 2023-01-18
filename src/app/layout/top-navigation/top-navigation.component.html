@@ -22,7 +22,7 @@
           routerLink="/login"
           *ngIf="!isLogged"
         >
-          Login
+          LoginBindingModel
         </button>
         <button
           mat-menu-item
@@ -76,7 +76,7 @@
             *ngFor="let subcategory of subcategories | async"
             [routerLink]="['/subcategory', subcategory.id]"
           >
-            {{ subcategory.subcategoryName }}
+            {{ subcategory.name }}
           </button>
         </mat-menu>
       </mat-menu>

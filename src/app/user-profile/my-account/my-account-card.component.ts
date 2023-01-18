@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../services/UserService";
-import {LoggedUser} from "../../models/logged_user";
+import {LoggedUser} from "../../models/logged-user-binding-model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {changePassword} from "../../models/changepassword";
-import {UserData} from "../../models/user-data";
+import {PasswordBindingModel} from "../../models/password-binding-model";
+import {UserDataBindingModel} from "../../models/user-data-binding-model";
 
 @Component({
   selector: 'app-my-account-card',
@@ -17,13 +17,13 @@ export class MyAccountCardComponent implements OnInit {
 
   userDetailsFormGroup!: FormGroup;
 
-  passwordModel: changePassword = {
+  passwordModel: PasswordBindingModel = {
     oldPassword: '',
     newPassword: '',
     confirmNewPassword: ''
   }
 
-  userDataModel: UserData = {
+  userDataModel: UserDataBindingModel = {
     mobilePhone:  '',
     nickname: '',
     gender: '',
@@ -50,11 +50,11 @@ export class MyAccountCardComponent implements OnInit {
     })
   }
 
-  changePassword(password: changePassword) {
+  changePassword(password: PasswordBindingModel) {
     this.userService._changeUserPassword(password);
   }
 
-  changeUserData(userData: UserData) {
+  changeUserData(userData: UserDataBindingModel) {
     this.userService._editUserData(userData);
   }
 

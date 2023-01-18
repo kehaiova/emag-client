@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/CategoryService';
 import { map, Observable } from 'rxjs';
-import { Category } from '../../models/category';
-import { SubCategory } from 'src/app/models/subcategory';
+import { CategoryBindingModel } from '../../models/category-binding-model';
+import { SubcategoryBindingModel } from 'src/app/models/subcategory-binding-model';
 import {UserService} from "../../services/UserService";
-import {LoggedUser} from "../../models/logged_user";
+import {LoggedUser} from "../../models/logged-user-binding-model";
 
 @Component({
   selector: 'app-top-navigation',
@@ -14,8 +14,8 @@ import {LoggedUser} from "../../models/logged_user";
 export class TopNavigationComponent implements OnInit {
   constructor(public userService: UserService, private categoryService: CategoryService) {}
 
-  categories!: Observable<Category[]>;
-  subcategories!: Observable<SubCategory[]>;
+  categories!: Observable<CategoryBindingModel[]>;
+  subcategories!: Observable<CategoryBindingModel[]>;
   isLogged: boolean = false;
   loggedUser: LoggedUser = {} as LoggedUser;
 

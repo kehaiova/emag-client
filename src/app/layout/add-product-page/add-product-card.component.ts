@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductDto} from "../../models/productdto";
+import {ProductBindingModel} from "../../models/product-binding-model";
 import {Observable} from "rxjs";
-import {SubCategory} from "../../models/subcategory";
+import {SubcategoryBindingModel} from "../../models/subcategory-binding-model";
 import {CategoryService} from "../../services/CategoryService";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ProductService} from "../../services/ProductService";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-add-product-card',
@@ -13,13 +14,15 @@ import {ProductService} from "../../services/ProductService";
 })
 export class AddProductCardComponent implements OnInit {
 
-  constructor(private productService: ProductService, private categoryService: CategoryService) { }
+  constructor(private route: ActivatedRoute,private productService: ProductService, private categoryService: CategoryService) { }
 
-  subCategories!: Observable<SubCategory[]>;
+  subCategories!: Observable<SubcategoryBindingModel[]>;
+
+
 
   productForm!: FormGroup;
 
-  model: ProductDto = {
+  model: ProductBindingModel = {
     name: '',
     subCategoryId: '',
     brand: '',
@@ -47,9 +50,14 @@ export class AddProductCardComponent implements OnInit {
     })
   }
 
-  addProduct(product: ProductDto) {
+  addProduct(product: ProductBindingModel) {
     console.log(product);
-    // this.productService._addProduct(product);
+    this.productService._addProduct(product);
   }
 
+  editProduct(product: ProductBindingModel) {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.productService._editProduct(id, product);
+  }
 }

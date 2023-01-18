@@ -21,3 +21,13 @@ button {
   border: 1px solid transparent;
   border-radius: 21px;
 }
+
+button:first-child {
+  margin-right: 5px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}

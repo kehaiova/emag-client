@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Login} from "../../models/login";
+import {LoginBindingModel} from "../../models/login-binding-model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../services/UserService";
 
@@ -15,7 +15,7 @@ export class LoginPageComponent implements OnInit {
 
   loginFormGroup!: FormGroup;
 
-  loginModel: Login = {
+  loginModel: LoginBindingModel = {
     email: '',
     password: ''
   }
@@ -31,7 +31,7 @@ export class LoginPageComponent implements OnInit {
     })
   }
 
-  login(loginDetails: Login){
+  login(loginDetails: LoginBindingModel){
     this.userService._login(loginDetails)
   }
 }

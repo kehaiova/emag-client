@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product';
+import { ProductsBindingModel } from 'src/app/models/products-binding-model';
 import { CartService } from 'src/app/services/CartService';
 import { ProductService } from 'src/app/services/ProductService';
 import { UserService } from 'src/app/services/UserService';
@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/UserService';
   styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent implements OnInit {
-  @Input() product: Product = {} as Product;
+  @Input() product: ProductsBindingModel = {} as ProductsBindingModel;
   @Input() isFavPage: boolean = false;
   @Input() isCartPage: boolean = false;
 
@@ -40,6 +40,6 @@ export class ProductCardComponent implements OnInit {
   }
 
   delete(productId: number) {
-    // this.productService._deleteProduct(productId);
+    this.productService._deleteProduct(productId);
   }
 }

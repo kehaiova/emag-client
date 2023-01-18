@@ -1,5 +1,5 @@
 <mat-tab-group>
-  <mat-tab label="Add product">
+  <mat-tab label="ProductsBindingModel">
     <form [formGroup]="productForm">
       <mat-form-field appearance="outline">
         <input matInput [(ngModel)]="model.name" formControlName="name">
@@ -43,7 +43,11 @@
         <input matInput [(ngModel)]="model.warrantyMonths" formControlName="warrantyMonths">
         <mat-label>Warranty Months</mat-label>
       </mat-form-field>
-      <button (click)="addProduct(model)">Add</button>
+      <div>
+        <button (click)="addProduct(model)">Add</button>
+        <button (click)="editProduct(model)">Edit</button>
+      </div>
+
     </form>
   </mat-tab>
 </mat-tab-group>

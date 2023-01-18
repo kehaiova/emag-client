@@ -1,4 +1,4 @@
-export interface UserData {
+export interface UserDataBindingModel {
   mobilePhone?: string;
   nickname?: string;
   gender?: string;

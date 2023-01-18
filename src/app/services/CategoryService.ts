@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Category } from '../models/category';
-import { SubCategory } from '../models/subcategory';
+import { CategoryBindingModel } from '../models/category-binding-model';
+import { SubcategoryBindingModel } from '../models/subcategory-binding-model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,8 +13,8 @@ export class CategoryService {
 
   categoryId: string = '';
 
-  _getCategory(): Observable<Category[]> {
-    return this.http.get<Category[]>(environment.baseUrl + '/categories').pipe(
+  _getCategory(): Observable<CategoryBindingModel[]> {
+    return this.http.get<CategoryBindingModel[]>(environment.baseUrl + '/categories').pipe(
       map((result) => {
         for (let el of result) {
           this.categoryId = el.id;
@@ -24,14 +24,14 @@ export class CategoryService {
     );
   }
 
-  _getSubcategories(categoryId: string): Observable<SubCategory[]> {
+  _getSubcategories(categoryId: string): Observable<CategoryBindingModel[]> {
     console.log(categoryId)
-    return this.http.get<SubCategory[]>(
+    return this.http.get<CategoryBindingModel[]>(
       environment.baseUrl + '/subcategories/' + categoryId
     );
   }
 
-  _getAllSubcategories(): Observable<SubCategory[]> {
-    return this.http.get<SubCategory[]>(environment.baseUrl + "/subcategories/findAll")
+  _getAllSubcategories(): Observable<SubcategoryBindingModel[]> {
+    return this.http.get<SubcategoryBindingModel[]>(environment.baseUrl + "/subcategories/findAll")
   }
 }

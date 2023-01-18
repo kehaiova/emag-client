@@ -12,7 +12,7 @@ import {UserDataBindingModel} from "../../models/user-data-binding-model";
 })
 export class MyAccountCardComponent implements OnInit {
 
-  constructor(private userService: UserService) {
+  constructor(public userService: UserService) {
   }
 
   loggedUser: LoggedUser = {} as LoggedUser;
@@ -58,6 +58,14 @@ export class MyAccountCardComponent implements OnInit {
 
   changeUserData(userData: UserDataBindingModel) {
     this.userService._editUserData(userData);
+  }
+
+  subscribe() {
+    this.userService._subscribe();
+  }
+
+  unsubscribe() {
+    this.userService._unsubscribe();
   }
 
 }

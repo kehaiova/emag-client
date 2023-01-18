@@ -25,7 +25,7 @@
 
 
       <mat-form-field appearance="outline">
-        <input matInput [(ngModel)]="model.price"  formControlName="price">
+        <input matInput [(ngModel)]="model.price" formControlName="price">
         <mat-label>Price</mat-label>
       </mat-form-field>
 
@@ -49,6 +49,9 @@
       </div>
 
     </form>
+  </mat-tab>
+  <mat-tab label="Discount">
+    <app-discount-component></app-discount-component>
   </mat-tab>
 </mat-tab-group>
 

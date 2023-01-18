@@ -23,6 +23,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {AddProductPageComponent} from './add-product-page/add-product-page.component';
 import {AddProductCardComponent} from './add-product-page/add-product-card.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { DiscountComponentComponent } from './components/discount-component/discount-component.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     SingleProductPageComponent,
     AddProductPageComponent,
     AddProductCardComponent,
+    DiscountComponentComponent,
   ],
   imports: [
     CommonModule,
@@ -53,6 +57,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    MatNativeDateModule,
     MatInputModule,
     MatMenuModule,
     RouterLink,
@@ -61,6 +66,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
   ],
   exports: [TopNavigationComponent],
 })

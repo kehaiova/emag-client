@@ -56,6 +56,13 @@
         <button (click)="changePassword(passwordModel)">Change password</button>
       </form>
 
+
     </mat-card-content>
+
   </mat-card>
+
 </section>
+<div class="actions">
+  <button *ngIf="userService.isLogged && !userService.isSubscribed" (click)="subscribe()">Subscribe</button>
+  <button *ngIf="userService.isLogged && userService.isSubscribed" (click)="unsubscribe()">Unsubscribe</button>
+</div>

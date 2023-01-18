@@ -30,7 +30,7 @@ export class AddProductCardComponent implements OnInit {
     price: '',
     quantity: '',
     description: '',
-    warrantyMonths: '',
+    warrantyMonths: 0,
   }
   ngOnInit(): void {
     this.createProductForm();

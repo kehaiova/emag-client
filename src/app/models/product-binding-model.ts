@@ -6,5 +6,5 @@ export interface ProductBindingModel {
   price: string,
   quantity: string,
   description: string,
-  warrantyMonths: string,
+  warrantyMonths: number,
 }

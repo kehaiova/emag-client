@@ -23,6 +23,8 @@ export class UserService {
   loggedUser: any;
   isLogged: boolean = false;
 
+  isSubscribed: boolean = false;
+
 
   _isAdmin(): boolean {
     return this.loggedUser?.admin && this.isLogged;
@@ -103,11 +105,15 @@ export class UserService {
 
   _subscribe() {
     return this.http.post(environment.baseUrl + "/users/subscribe", {})
-      .subscribe();
+      .subscribe(result => {
+        this.isSubscribed = true;
+      });
   }
 
   _unsubscribe() {
     return this.http.post(environment.baseUrl + "/users/unsubscribe", {})
-      .subscribe();
+      .subscribe(result => {
+        this.isSubscribed = false;
+      });
   }
 }

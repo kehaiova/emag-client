@@ -25,8 +25,6 @@ export class UserService {
 
 
   _isAdmin(): boolean {
-    console.log(this.isLogged, 'isLogged')
-    console.log(this.loggedUser, 'Logged user')
     return this.loggedUser?.admin && this.isLogged;
   }
 

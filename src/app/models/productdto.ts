@@ -1,6 +1,6 @@
 export interface ProductDto {
   name: string,
-  subcategoryId: string,
+  subCategoryId: string,
   brand: string,
   model: string,
   price: string,

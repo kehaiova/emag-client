@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {SubCategory} from "../../models/subcategory";
 import {CategoryService} from "../../services/CategoryService";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ProductService} from "../../services/ProductService";
 
 @Component({
   selector: 'app-add-product-card',
@@ -12,7 +13,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class AddProductCardComponent implements OnInit {
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private productService: ProductService, private categoryService: CategoryService) { }
 
   subCategories!: Observable<SubCategory[]>;
 
@@ -20,7 +21,7 @@ export class AddProductCardComponent implements OnInit {
 
   model: ProductDto = {
     name: '',
-    subcategoryId: '',
+    subCategoryId: '',
     brand: '',
     model: '',
     price: '',
@@ -44,6 +45,11 @@ export class AddProductCardComponent implements OnInit {
       description: new FormControl('', []),
       warrantyMonths: new FormControl('', []),
     })
+  }
+
+  addProduct(product: ProductDto) {
+    console.log(product);
+    // this.productService._addProduct(product);
   }
 
 }

@@ -42,8 +42,7 @@ export class SingleProductPageComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.product = id ? this.productService._getProductById(id) : EMPTY;
-
+    // this.product = id ? this.productService._getProductById(id) : EMPTY;
     this.product = of(this.tempProduct);
   }
 }

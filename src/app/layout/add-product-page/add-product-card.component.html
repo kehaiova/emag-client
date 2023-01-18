@@ -7,7 +7,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-select [(ngModel)]="model.subcategoryId" formControlName="subCategoryId">
+        <mat-select [(ngModel)]="model.subCategoryId" formControlName="subCategoryId">
           <mat-option *ngFor=" let det of subCategories | async" [value]="det.id">{{det.subcategoryName}}</mat-option>
         </mat-select>
         <mat-label>Subcategory</mat-label>
@@ -43,7 +43,7 @@
         <input matInput [(ngModel)]="model.warrantyMonths" formControlName="warrantyMonths">
         <mat-label>Warranty Months</mat-label>
       </mat-form-field>
-      <button>Add</button>
+      <button (click)="addProduct(model)">Add</button>
     </form>
   </mat-tab>
 </mat-tab-group>

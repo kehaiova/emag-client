@@ -40,6 +40,6 @@ export class ProductCardComponent implements OnInit {
   }
 
   delete(productId: number) {
-    this.productService._deleteProduct(productId);
+    // this.productService._deleteProduct(productId);
   }
 }

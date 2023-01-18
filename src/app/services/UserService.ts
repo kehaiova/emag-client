@@ -100,4 +100,14 @@ export class UserService {
       .put(environment.baseUrl + '/users/' + this.loggedUser.id, userData)
       .subscribe();
   }
+
+  _subscribe() {
+    return this.http.post(environment.baseUrl + "/users/subscribe", {})
+      .subscribe();
+  }
+
+  _unsubscribe() {
+    return this.http.post(environment.baseUrl + "/users/unsubscribe", {})
+      .subscribe();
+  }
 }

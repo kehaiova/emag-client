@@ -3,6 +3,7 @@ import { EMPTY, Observable, of } from 'rxjs';
 import { ProductsBindingModel } from 'src/app/models/products-binding-model';
 import { SubcategoryBindingModel } from 'src/app/models/subcategory-binding-model';
 import { CartService } from 'src/app/services/CartService';
+import {OrderService} from "../../services/OrderService";
 
 @Component({
   selector: 'app-cart-page',
@@ -12,9 +13,13 @@ import { CartService } from 'src/app/services/CartService';
 export class CartPageComponent implements OnInit {
   products: Observable<ProductsBindingModel[]> = EMPTY;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private orderService: OrderService) {}
 
   ngOnInit(): void {
     this.products = this.cartService._getCart();
+  }
+
+  order() {
+    this.orderService._order();
   }
 }

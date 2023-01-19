@@ -14,7 +14,7 @@ export class ProductOrderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addToCart(productId: number) {
-    this.cartService._removeFromCart(productId);
+  removeFromCart(productId: number) {
+    this.cartService._removeFromCart(productId).subscribe();
   }
 }

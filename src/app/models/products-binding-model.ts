@@ -8,7 +8,7 @@ export interface ProductsBindingModel {
   brand: string;
   model: String;
   price: number;
-  discountedPrice: number;
+  discountedPrice?: number;
   description: string;
   quantity: number;
   warrantyMonths: number;

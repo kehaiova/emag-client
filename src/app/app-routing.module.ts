@@ -11,7 +11,7 @@ import { FavouritePageComponent } from './layout/favourite-page/favourite-page.c
 import { CartPageComponent } from './layout/cart-page/cart-page.component';
 import { SingleProductPageComponent } from './layout/single-product-page/single-product-page.component';
 import { AddProductPageComponent } from './layout/add-product-page/add-product-page.component';
-import {AddProductCardComponent} from "./layout/add-product-page/add-product-card.component";
+import { AddProductCardComponent } from './layout/add-product-page/add-product-card.component';
 
 const routes: Routes = [
   {
@@ -66,7 +66,6 @@ const routes: Routes = [
     path: 'product/:id',
     component: SingleProductPageComponent,
   },
-
 ];
 
 @NgModule({

@@ -14,7 +14,7 @@ export class ProductCardComponent implements OnInit {
   @Input() isFavPage: boolean = false;
   @Input() isCartPage: boolean = false;
 
-  isAdmin: boolean = true;
+  isAdmin: boolean = false;
 
   constructor(
     private productService: ProductService,
@@ -23,8 +23,7 @@ export class ProductCardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.isAdmin = this.userService._isAdmin();
-    this.isAdmin = true;
+    this.isAdmin = this.userService._isAdmin();
   }
 
   fav(productId: number) {

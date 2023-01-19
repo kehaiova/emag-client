@@ -18,7 +18,9 @@ button {
   position: relative;
   font-weight: 600;
   border: 1px solid transparent;
+  cursor: pointer;
   border-radius: 21px;
+  margin: auto;
 }
 
 div {

@@ -1,13 +1,14 @@
 <app-top-navigation></app-top-navigation>
 <h1>Cart</h1>
+<button (click)="order()">
+  Order <br />
+  {{ sum | currency }}
+</button>
+
 <div class="product-container">
   <app-product-order
     *ngFor="let product of products | async"
     [product]="product"
   >
   </app-product-order>
-  <div>
-    <button (click)="order()">Order</button>
-
-  </div>
 </div>

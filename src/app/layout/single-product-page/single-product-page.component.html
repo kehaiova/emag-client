@@ -1,5 +1,4 @@
 <app-top-navigation></app-top-navigation>
-<h1>{{ (product | async)!.name }}</h1>
 <div class="product-container">
-  <app-product-card [product]="(product | async)!" > </app-product-card>
+  <app-product [product]="(product | async)!"></app-product>
 </div>

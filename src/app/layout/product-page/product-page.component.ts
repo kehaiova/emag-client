@@ -13,7 +13,6 @@ import { of } from 'rxjs';
   styleUrls: ['./product-page.component.css'],
 })
 export class ProductPageComponent implements OnInit {
-
   products: Observable<ProductsBindingModel[]> = EMPTY;
 
   constructor(

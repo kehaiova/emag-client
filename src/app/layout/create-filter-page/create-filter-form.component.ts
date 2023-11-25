@@ -14,17 +14,17 @@ export class CreateFilterFormComponent implements OnInit {
   productForm!: FormGroup;
 
   model: FilterBindingModel = {
-    subcategoryId: 0,
-    searchKeyword: '',
-    brand: '',
-    model: '',
-    maxPrice: 0,
-    minPrice: 0,
-    discountedOnly: false,
-    orderByPrice: false,
-    sortDesc: false,
-    productsPerPage: 0,
-    pageNumber: 0,
+    subcategoryId: undefined,
+    searchKeyword: undefined,
+    brand: undefined,
+    model: undefined,
+    maxPrice: undefined,
+    minPrice: undefined,
+    discountedOnly: undefined,
+    orderByPrice: undefined,
+    sortDesc: undefined,
+    productsPerPage: undefined,
+    pageNumber: undefined,
   };
 
   ngOnInit(): void {

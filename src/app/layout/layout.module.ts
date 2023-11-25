@@ -32,6 +32,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { CreateFilterPageComponent } from './create-filter-page/create-filter-page.component';
 import { CreateFilterFormComponent } from './create-filter-page/create-filter-form.component';
 import { FilterPageComponent } from './filter-page/filter-page.component';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,8 @@ import { FilterPageComponent } from './filter-page/filter-page.component';
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
+    MatListModule,
+    MatTableModule,
   ],
   exports: [TopNavigationComponent],
 })

@@ -109,6 +109,6 @@ button:disabled {
   box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2) !important;
   border-radius: 20px;
 }
-.mat-form-field-flex > .mat-form-field-infix {
-  padding: 0.3em 0 !important;
-}
+/*.mat-form-field-flex > .mat-form-field-infix {*/
+/*  padding: 0.3em 0 !important;*/
+/*}*/

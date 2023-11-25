@@ -82,8 +82,8 @@ export class ProductService {
       .subscribe();
   }
 
-  _searchProduct(keyword: string): Observable<ProductsBindingModel[]> {
-    return this.http.get<ProductsBindingModel[]>(
+  _searchProduct(keyword: string): Observable<any> {
+    return this.http.get<any>(
       environment.baseUrl + '/products/search/' + keyword
     );
   }

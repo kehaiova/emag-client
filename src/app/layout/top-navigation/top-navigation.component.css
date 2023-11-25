@@ -80,3 +80,7 @@ p {
 .pointer {
   cursor: pointer;
 }
+
+.field > .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0 !important;
+}

@@ -35,13 +35,13 @@ export class UserService {
       (result) => {
         this.router.navigate(['/home']).then((r) => {});
       },
-      (error) => {
-        this.snackbarService.openErrorSnackbar(
-          // @ts-ignore
-          Object.values(error.error)[0].toString(),
-          'error'
-        );
-      }
+      // (error) => {
+      //   this.snackbarService.openErrorSnackbar(
+      //     // @ts-ignore
+      //     Object.values(error.error)[0].toString(),
+      //     'error'
+      //   );
+      // }
     );
   }
 
@@ -50,13 +50,13 @@ export class UserService {
       .put(environment.baseUrl + '/users/forgotten-pass', email)
       .subscribe(
         (result) => {},
-        (error) => {
-          this.snackbarService.openErrorSnackbar(
-            // @ts-ignore
-            Object.values(error.error)[0].toString(),
-            'error'
-          );
-        }
+        // (error) => {
+        //   this.snackbarService.openErrorSnackbar(
+        //     // @ts-ignore
+        //     Object.values(error.error)[0].toString(),
+        //     'error'
+        //   );
+        // }
       );
   }
 
@@ -68,13 +68,6 @@ export class UserService {
           this.router.navigate(['/home']).then((r) => {});
           this.loggedUser = result;
           this.isLogged = true;
-        },
-        (error) => {
-          this.snackbarService.openErrorSnackbar(
-            // @ts-ignore
-            Object.values(error.error)[0].toString(),
-            'error'
-          );
         }
       );
   }

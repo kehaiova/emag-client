@@ -26,6 +26,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DiscountComponentComponent } from './components/discount-component/discount-component.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import { OrdersComponent } from './components/orders/orders.component';
+import { OrdersCompComponent } from './components/orders/orders-comp/orders-comp.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     AddProductPageComponent,
     AddProductCardComponent,
     DiscountComponentComponent,
+    OrdersComponent,
+    OrdersCompComponent,
   ],
   imports: [
     CommonModule,

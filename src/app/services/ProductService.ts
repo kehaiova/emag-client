@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {map, Observable} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { ProductsBindingModel } from '../models/products-binding-model';
@@ -55,7 +55,9 @@ export class ProductService {
   }
 
   _addProduct(product: ProductBindingModel) {
-    return this.http.post(environment.baseUrl + "/products", product).subscribe();
+    return this.http.post(environment.baseUrl + "/products", product).subscribe(res => {
+      this.snackbarService.openErrorSnackbar('Product is added', 'success');
+    });
   }
 
   _deleteProduct(productId: number) {

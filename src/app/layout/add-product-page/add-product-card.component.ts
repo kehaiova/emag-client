@@ -51,7 +51,6 @@ export class AddProductCardComponent implements OnInit {
   }
 
   addProduct(product: ProductBindingModel) {
-    console.log(product);
     this.productService._addProduct(product);
   }
 

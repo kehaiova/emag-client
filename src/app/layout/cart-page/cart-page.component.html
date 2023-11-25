@@ -9,6 +9,7 @@
   <app-product-order
     *ngFor="let product of products | async"
     [product]="product"
+    (removeItem)="removeItem(product.id)"
   >
   </app-product-order>
 </div>

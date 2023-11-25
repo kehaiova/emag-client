@@ -50,6 +50,10 @@
       Admin Panel
       <mat-icon class="person-icon">admin_panel_settings</mat-icon>
     </button>
+    <button class="profile-button" *ngIf="isLogged" [routerLink]="['/orders']">
+      Orders
+      <mat-icon class="person-icon">quick_reorder</mat-icon>
+    </button>
     <button class="profile-button" [routerLink]="['/cart']">
       Cart
       <mat-icon class="person-icon">shopping_cart</mat-icon>

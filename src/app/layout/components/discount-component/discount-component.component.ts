@@ -16,18 +16,15 @@ export class DiscountComponentComponent implements OnInit {
 
   discountForm!: FormGroup;
 
-  model: DiscountProductBindingModel = {
-    discountPercent: 0,
-    expireDate: ''
-  }
+  model: DiscountProductBindingModel = {} as DiscountProductBindingModel;
 
   ngOnInit(): void {
     this.createForm();
   }
 
-  _discount(discount: DiscountProductBindingModel) {
+  _discount() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.discountService._makeDiscount(id, discount);
+    this.discountService._makeDiscount(id, this.model);
   }
 
   createForm() {

@@ -12,6 +12,8 @@ import { CartPageComponent } from './layout/cart-page/cart-page.component';
 import { SingleProductPageComponent } from './layout/single-product-page/single-product-page.component';
 import { AddProductPageComponent } from './layout/add-product-page/add-product-page.component';
 import { AddProductCardComponent } from './layout/add-product-page/add-product-card.component';
+import {OrdersComponent} from "./layout/components/orders/orders.component";
+import {OrdersCompComponent} from "./layout/components/orders/orders-comp/orders-comp.component";
 
 const routes: Routes = [
   {
@@ -33,6 +35,16 @@ const routes: Routes = [
   {
     path: 'category/:id',
     component: ProductPageComponent,
+  },
+  {
+    path: 'orders',
+    component: OrdersComponent,
+    children: [
+      {
+        path: '',
+        component: OrdersCompComponent
+      }
+    ]
   },
   {
     path: 'subcategory/:id',

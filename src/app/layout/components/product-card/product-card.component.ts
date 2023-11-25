@@ -13,7 +13,7 @@ export class ProductCardComponent implements OnInit {
   @Input() product: ProductsBindingModel = {} as ProductsBindingModel;
   @Input() isFavPage: boolean = false;
   @Input() isCartPage: boolean = false;
-  @Output() removeItem = new EventEmitter<string>();
+  @Output() removeItem = new EventEmitter<number>();
 
   isAdmin: boolean = false;
 

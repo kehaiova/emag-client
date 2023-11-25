@@ -15,6 +15,8 @@ import { AddProductCardComponent } from './layout/add-product-page/add-product-c
 import { OrdersComponent } from './layout/components/orders/orders.component';
 import { OrdersCompComponent } from './layout/components/orders/orders-comp/orders-comp.component';
 import { SearchPageComponent } from './layout/search-page/search-page.component';
+import { CreateFilterPageComponent } from './layout/create-filter-page/create-filter-page.component';
+import { FilterPageComponent } from './layout/filter-page/filter-page.component';
 
 const routes: Routes = [
   {
@@ -82,6 +84,14 @@ const routes: Routes = [
   {
     path: 'search/:keyword',
     component: SearchPageComponent,
+  },
+  {
+    path: 'filter',
+    component: CreateFilterPageComponent,
+  },
+  {
+    path: 'filter-search',
+    component: FilterPageComponent,
   },
 ];
 

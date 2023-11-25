@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 import { ProductsBindingModel } from '../models/products-binding-model';
 import { SnackbarService } from './SnackbarService';
 import { ProductBindingModel } from '../models/product-binding-model';
+import { FilterBindingModel } from '../models/filter-binding-model';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,8 @@ export class ProductService {
     private http: HttpClient,
     private snackbarService: SnackbarService
   ) {}
+
+  filter?: FilterBindingModel = undefined;
 
   _getProducts(subCategoryId: string): Observable<ProductsBindingModel[]> {
     return this.http.get<ProductsBindingModel[]>(
@@ -82,6 +85,13 @@ export class ProductService {
   _searchProduct(keyword: string): Observable<ProductsBindingModel[]> {
     return this.http.get<ProductsBindingModel[]>(
       environment.baseUrl + '/products/search/' + keyword
+    );
+  }
+
+  _filterSearchProduct(): Observable<ProductsBindingModel[]> {
+    return this.http.post<ProductsBindingModel[]>(
+      environment.baseUrl + '/products/filter',
+      this.filter
     );
   }
 }

@@ -67,8 +67,16 @@ p {
 .profileMenu {
   text-align: center;
 }
+.push-left {
+  margin-left: auto;
+}
 .search {
   color: white;
-  margin-left: auto;
   display: flex;
+}
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0 !important;
+}
+.pointer {
+  cursor: pointer;
 }

@@ -14,24 +14,27 @@ export class CategoryService {
   categoryId: string = '';
 
   _getCategory(): Observable<CategoryBindingModel[]> {
-    return this.http.get<CategoryBindingModel[]>(environment.baseUrl + '/categories').pipe(
-      map((result) => {
-        for (let el of result) {
-          this.categoryId = el.id;
-        }
-        return result;
-      })
-    );
+    return this.http
+      .get<CategoryBindingModel[]>(environment.baseUrl + '/categories')
+      .pipe(
+        map((result) => {
+          for (let el of result) {
+            this.categoryId = el.id;
+          }
+          return result;
+        })
+      );
   }
 
   _getSubcategories(categoryId: string): Observable<CategoryBindingModel[]> {
-    console.log(categoryId)
     return this.http.get<CategoryBindingModel[]>(
       environment.baseUrl + '/subcategories/' + categoryId
     );
   }
 
   _getAllSubcategories(): Observable<SubcategoryBindingModel[]> {
-    return this.http.get<SubcategoryBindingModel[]>(environment.baseUrl + "/subcategories/findAll")
+    return this.http.get<SubcategoryBindingModel[]>(
+      environment.baseUrl + '/subcategories/findAll'
+    );
   }
 }

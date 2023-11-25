@@ -89,6 +89,10 @@
         </mat-menu>
       </mat-menu>
     </button>
+
+    <button class="push-left pointer" routerLink="/filter">
+      <mat-icon matSuffix>filter_list</mat-icon>
+    </button>
     <form class="search">
       <mat-form-field class="example-full-width">
         <input
@@ -101,8 +105,8 @@
           placeholder="Search"
         />
       </mat-form-field>
-      <button (click)="search(searchValue)">
-        <mat-icon matSuffix>search</mat-icon>
+      <button (click)="search(searchValue)" class="pointer">
+        <mat-icon>search</mat-icon>
       </button>
     </form>
   </mat-toolbar-row>

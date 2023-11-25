@@ -10,7 +10,7 @@ body {
 
 .mat-icon-button + .mat-datepicker-input-container {
   float: left !important;
-  margin-top:7px !important;
+  margin-top: 7px !important;
 }
 
 .snackbar-error {
@@ -108,4 +108,7 @@ button:disabled {
   border: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2) !important;
   border-radius: 20px;
+}
+.mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.3em 0 !important;
 }

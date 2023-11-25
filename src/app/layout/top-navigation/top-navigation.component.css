@@ -30,7 +30,6 @@ mat-icon {
 img {
   margin-right: auto;
   width: 140px;
-
 }
 
 button {
@@ -67,4 +66,9 @@ p {
 
 .profileMenu {
   text-align: center;
+}
+.search {
+  color: white;
+  margin-left: auto;
+  display: flex;
 }

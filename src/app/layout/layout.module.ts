@@ -28,6 +28,9 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrdersCompComponent } from './components/orders/orders-comp/orders-comp.component';
+import {MatListModule} from "@angular/material/list";
+import {MatTableModule} from "@angular/material/table";
+import {SearchPageComponent} from "./search-page/search-page.component";
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import { OrdersCompComponent } from './components/orders/orders-comp/orders-comp
     DiscountComponentComponent,
     OrdersComponent,
     OrdersCompComponent,
+    SearchPageComponent
   ],
   imports: [
     CommonModule,
@@ -71,6 +75,8 @@ import { OrdersCompComponent } from './components/orders/orders-comp/orders-comp
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
+    MatListModule,
+    MatTableModule,
   ],
   exports: [TopNavigationComponent],
 })

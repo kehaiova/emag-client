@@ -5,6 +5,7 @@
     *ngFor="let product of products | async"
     [product]="product"
     [isFavPage]="true"
+    (removeItem)="removeItem(product.id)"
   >
   </app-product-card>
 </div>

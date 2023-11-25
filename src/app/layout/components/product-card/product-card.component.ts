@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductsBindingModel } from 'src/app/models/products-binding-model';
 import { CartService } from 'src/app/services/CartService';
 import { ProductService } from 'src/app/services/ProductService';
@@ -13,6 +13,7 @@ export class ProductCardComponent implements OnInit {
   @Input() product: ProductsBindingModel = {} as ProductsBindingModel;
   @Input() isFavPage: boolean = false;
   @Input() isCartPage: boolean = false;
+  @Output() removeItem = new EventEmitter<string>();
 
   isAdmin: boolean = false;
 
@@ -29,6 +30,7 @@ export class ProductCardComponent implements OnInit {
   fav(productId: number) {
     if (this.isFavPage) {
       this.productService._unfavourite(productId).subscribe();
+      this.removeItem.emit(productId);
     } else {
       this.productService._favourite(productId).subscribe();
     }

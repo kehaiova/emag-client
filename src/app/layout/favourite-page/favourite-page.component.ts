@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
 import { ProductsBindingModel } from 'src/app/models/products-binding-model';
 import { SubcategoryBindingModel } from 'src/app/models/subcategory-binding-model';
@@ -9,12 +9,21 @@ import { ProductService } from 'src/app/services/ProductService';
   templateUrl: './favourite-page.component.html',
   styleUrls: ['./favourite-page.component.css'],
 })
-export class FavouritePageComponent implements OnInit {
+export class FavouritePageComponent implements OnChanges {
   products: Observable<ProductsBindingModel[]> = EMPTY;
 
   constructor(private productService: ProductService) {}
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.products = this.productService._getAllFavourites();
+  }
+
+  removeItem(id: number): void {
+    this.products.pipe(
+      map((elements) => {
+        // Here goes some condition, apply it to your use case, the condition only will return when condition matches
+        return elements.filter((element) => element.id !== id);
+      })
+    );
   }
 }

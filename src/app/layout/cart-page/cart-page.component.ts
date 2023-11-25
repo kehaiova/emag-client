@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { EMPTY, Observable, of, map } from 'rxjs';
 import { ProductsBindingModel } from 'src/app/models/products-binding-model';
 import { SubcategoryBindingModel } from 'src/app/models/subcategory-binding-model';
@@ -33,7 +33,7 @@ export class CartPageComponent implements OnInit, OnChanges {
             if (pr.discountedPrice === null || pr.discountedPrice == 0) {
               this.sum += pr.price;
             } else {
-              this.sum+=pr.discountedPrice!;
+              this.sum += pr.discountedPrice!;
             }
           });
         })
@@ -42,18 +42,18 @@ export class CartPageComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    this.products = this.cartService._getCart().pipe(map((products) => {
-      console.log(products)
-      products.map((pr) => {
-        if (pr.discountedPrice === null || pr.discountedPrice == 0) {
-          this.sum += pr.price;
-        } else {
-          this.sum+=pr.discountedPrice!;
-        }
-      });
-      return products;
-    }));
-
+    this.products = this.cartService._getCart().pipe(
+      map((products) => {
+        products.map((pr) => {
+          if (pr.discountedPrice === null || pr.discountedPrice == 0) {
+            this.sum += pr.price;
+          } else {
+            this.sum += pr.discountedPrice!;
+          }
+        });
+        return products;
+      })
+    );
   }
 
   order() {
@@ -77,5 +77,4 @@ export class CartPageComponent implements OnInit, OnChanges {
       })
     );
   }
-
 }

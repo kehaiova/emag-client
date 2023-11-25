@@ -46,7 +46,11 @@
       Favourites
       <mat-icon class="person-icon">favorite</mat-icon>
     </button>
-    <button class="profile-button" *ngIf="userService._isAdmin()" [routerLink]="['/product/add']">
+    <button
+      class="profile-button"
+      *ngIf="userService._isAdmin()"
+      [routerLink]="['/product/add']"
+    >
       Admin Panel
       <mat-icon class="person-icon">admin_panel_settings</mat-icon>
     </button>
@@ -85,5 +89,21 @@
         </mat-menu>
       </mat-menu>
     </button>
+    <form class="search">
+      <mat-form-field class="example-full-width">
+        <input
+          type="text"
+          id="keyword"
+          [(ngModel)]="searchValue"
+          name="keyword"
+          [value]="searchValue"
+          matInput
+          placeholder="Search"
+        />
+      </mat-form-field>
+      <button (click)="search(searchValue)">
+        <mat-icon matSuffix>search</mat-icon>
+      </button>
+    </form>
   </mat-toolbar-row>
 </mat-toolbar>

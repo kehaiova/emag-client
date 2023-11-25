@@ -3,8 +3,9 @@ import { CategoryService } from '../../services/CategoryService';
 import { map, Observable } from 'rxjs';
 import { CategoryBindingModel } from '../../models/category-binding-model';
 import { SubcategoryBindingModel } from 'src/app/models/subcategory-binding-model';
-import {UserService} from "../../services/UserService";
-import {LoggedUser} from "../../models/logged-user-binding-model";
+import { UserService } from '../../services/UserService';
+import { LoggedUser } from '../../models/logged-user-binding-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-navigation',
@@ -12,12 +13,17 @@ import {LoggedUser} from "../../models/logged-user-binding-model";
   styleUrls: ['./top-navigation.component.css'],
 })
 export class TopNavigationComponent implements OnInit {
-  constructor(public userService: UserService, private categoryService: CategoryService) {}
+  constructor(
+    public userService: UserService,
+    private categoryService: CategoryService,
+    private router: Router
+  ) {}
 
   categories!: Observable<CategoryBindingModel[]>;
   subcategories!: Observable<CategoryBindingModel[]>;
   isLogged: boolean = false;
   loggedUser: LoggedUser = {} as LoggedUser;
+  searchValue: string = '';
 
   ngOnInit(): void {
     this.categories = this.categoryService._getCategory();
@@ -35,4 +41,7 @@ export class TopNavigationComponent implements OnInit {
     this.loggedUser = {} as LoggedUser;
   }
 
+  search(keyword: string) {
+    this.router.navigate(['search/' + keyword]);
+  }
 }

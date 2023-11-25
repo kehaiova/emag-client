@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import {map, Observable} from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { ProductsBindingModel } from '../models/products-binding-model';
 import { SnackbarService } from './SnackbarService';
-import {ProductBindingModel} from "../models/product-binding-model";
+import { ProductBindingModel } from '../models/product-binding-model';
 
 @Injectable({
   providedIn: 'root',
@@ -51,21 +51,37 @@ export class ProductService {
   }
 
   _getAllFavourites(): Observable<ProductsBindingModel[]> {
-    return this.http.get<ProductsBindingModel[]>(environment.baseUrl + '/products/fav');
+    return this.http.get<ProductsBindingModel[]>(
+      environment.baseUrl + '/products/fav'
+    );
   }
 
   _addProduct(product: ProductBindingModel) {
-    return this.http.post(environment.baseUrl + "/products", product).subscribe(res => {
-      this.snackbarService.openErrorSnackbar('Product is added', 'success');
-    });
+    return this.http
+      .post(environment.baseUrl + '/products', product)
+      .subscribe((res) => {
+        this.snackbarService.openErrorSnackbar('Product is added', 'success');
+      });
   }
 
   _deleteProduct(productId: number) {
     this.snackbarService.openErrorSnackbar('Product deleted', 'success');
-    this.http.delete<ProductsBindingModel[]>(environment.baseUrl + '/products/' + productId).subscribe();
+    this.http
+      .delete<ProductsBindingModel[]>(
+        environment.baseUrl + '/products/' + productId
+      )
+      .subscribe();
   }
 
   _editProduct(productId: number, product: ProductBindingModel) {
-    return this.http.put(environment.baseUrl + "/products/" + productId, product).subscribe();
+    return this.http
+      .put(environment.baseUrl + '/products/' + productId, product)
+      .subscribe();
+  }
+
+  _searchProduct(keyword: string): Observable<ProductsBindingModel[]> {
+    return this.http.get<ProductsBindingModel[]>(
+      environment.baseUrl + '/products/search/' + keyword
+    );
   }
 }

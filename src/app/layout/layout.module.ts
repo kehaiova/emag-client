@@ -28,6 +28,8 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrdersCompComponent } from './components/orders/orders-comp/orders-comp.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { OrdersCompComponent } from './components/orders/orders-comp/orders-comp
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
+    MatTableModule,
+    MatDividerModule,
   ],
   exports: [TopNavigationComponent],
 })
